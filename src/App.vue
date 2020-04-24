@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-menu default-active="1" class="el-menu-demo" mode="horizontal" @select="jump" >
+      <el-menu-item index="1">中国疫情地图</el-menu-item>
+      <el-menu-item index="2">全球疫情地图</el-menu-item>
+      <el-menu-item index="3">中国疫情趋势</el-menu-item>
+      <el-menu-item index="4">全球疫情趋势</el-menu-item>
+    </el-menu>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  methods:{
+    jump(key){
+      if (key === '1'){
+        this.$router.push('/chinamap')
+      }else if (key === '2'){
+        this.$router.push('/chinacurrent')
+      }else if (key === '3'){
+        this.$router.push('/globalmap')
+      }else if (key === '4'){
+        this.$router.push('/globalcurrent')
+      }
+
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
