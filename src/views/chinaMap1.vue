@@ -54,7 +54,7 @@
         //标题
         title: {
             // 地图标题
-            text: '国内疫情地图（累计确诊病例数，包含治愈、死亡）',
+            text: '国内现存疫情地图',
             // 是否显示标题
             show: true,
             // 副标题
@@ -136,10 +136,11 @@
     };
 
     export default {
-        name: "chinaMap",
+        name: "chinaMap1",
         data(){
             return{
                 chinaMap:'',
+
                 nowNum:'',
                 total:'',
                 cureTotal:'',
@@ -153,6 +154,7 @@
                 addjwsr:'',
                 addasymptom:'',
                 addcure_new:''
+
             }
         },
         mounted() {
@@ -186,7 +188,7 @@
                         let list = data.data.list.map(item =>{
                             return{
                                 name:item.name,
-                                value:item.value
+                                value:item.econNum
                             }
                         })
                         option.series[0].data = list
@@ -205,3 +207,4 @@
         font-weight: bold;
     }
 </style>
+

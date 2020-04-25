@@ -231,7 +231,7 @@
         //标题
         title: {
             // 地图标题
-            text: '全球疫情（累计确诊病例数，包含治愈、死亡）',
+            text: '全球现存疫情',
             // 是否显示标题
             show: true,
             // 副标题
@@ -356,7 +356,7 @@
                         let list = data.data.worldlist.map(item =>{
                             return{
                                 name:item.name,
-                                value:item.value
+                                value:item.econNum
                             }
                         })
                         option.series[0].data = list

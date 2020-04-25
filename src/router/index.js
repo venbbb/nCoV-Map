@@ -1,32 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 const ChinaMap =()=> import('../views/chinaMap')
-const ChinaCurrent =()=> import('../views/chinaCurrent')
+const ChinaMap1 =()=> import('../views/chinaMap1')
 const GlobalMap =()=> import('../views/globalMap')
-const GlobalCurrent =() => import('../views/globalCurrent')
+const GlobalMap1 =() => import('../views/globalMap1')
 
 Vue.use(VueRouter)
 
 const routes=[
     {
         path:'/',
-        redirect:'/chinamap'
+        redirect:'/chinamap1'
     },
     {
         path: '/chinamap',
         component:ChinaMap
     },
     {
-        path:'/chinacurrent',
-        component:ChinaCurrent
+        path:'/chinamap1',
+        component:ChinaMap1
     },
     {
         path:'/globalmap',
         component:GlobalMap
     },
     {
-        path:'/globalcurrent',
-        component:GlobalCurrent
+        path:'/globalmap1',
+        component:GlobalMap1
     }
 
 ]
